@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace MS_DealsHub_Win10
+namespace MSDealsWin10App
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
