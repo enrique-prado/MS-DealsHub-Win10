@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MSDealsDataLayer.FeedModels;
+using Windows.ApplicationModel.Resources;
 
 namespace MSDealsDataLayer.ViewModels
 {
@@ -23,6 +24,9 @@ namespace MSDealsDataLayer.ViewModels
 
         private string _currencySymbol = "";
         private bool _usePhoneFeed = false;
+
+        private ResourceLoader _resloader = new ResourceLoader();
+
 
         public AppElementViewModel()
         {
@@ -90,7 +94,7 @@ namespace MSDealsDataLayer.ViewModels
             }
             else
             {
-                return "Uncategorized";
+                return _resloader.GetString("NoCategory");
             }
         }
 
@@ -143,14 +147,7 @@ namespace MSDealsDataLayer.ViewModels
             {
                 if (Equals(Price, 0.0))
                 {
-                    if (_usePhoneFeed)
-                    {
-                        return "free";
-                    }
-                    else
-                    {
-                        return "Free";
-                    }
+                    return _resloader.GetString("FreePrice");
                 }
                 else
                 {

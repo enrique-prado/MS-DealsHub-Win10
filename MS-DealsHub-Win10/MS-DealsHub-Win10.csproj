@@ -96,15 +96,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AppsGamesPage.xaml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\AlbumViewModel.cs" />
+    <None Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\AppElementViewModel.cs" />
     <Compile Include="ViewModels\AppsPageViewModel.cs" />
-    <Compile Include="ViewModels\CategoryViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <None Include="ViewModels\CategoryViewModel.cs" />
+    <None Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -131,8 +133,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\AppsGamesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DealsHub-DataLayer\DealsHub-DataLayer.csproj">
+      <Project>{cbc3cd22-077d-440f-96ee-6ee37dd64593}</Project>
+      <Name>DealsHub-DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PrismLibrary\Prism\Prism.csproj">
       <Project>{e6c50355-d01e-4caa-884d-d7929861315c}</Project>
       <Name>Prism</Name>
@@ -150,6 +160,7 @@
       <Name>PrismWin10RTM</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

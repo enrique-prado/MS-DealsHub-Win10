@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using MSDealsDataLayer.FeedModels;
 #if WINDOWS_PHONE
 using MusicDealShared.WinPhoneExtensions;
 #endif
-using MSDealsDataLayer.Resources;
 using MSDealsDataLayer.Utils;
-using MSDealsDataLayer.WinPhoneExtensions;
 
 namespace MSDealsDataLayer.Services
 {

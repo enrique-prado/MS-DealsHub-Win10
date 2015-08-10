@@ -9,27 +9,38 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 using MSDealsDataLayer.FeedModels;
-using MSDealsDataLayer.Resources;
-using MSDealsDataLayer.WinPhoneExtensions;
+using Windows.ApplicationModel.Resources;
 
 namespace MSDealsDataLayer.Services
 {
-    class AppStoreDealsFeedService : IAppStoreDealsFeedService
+    public class AppStoreFeedService : IAppStoreFeedService
     {
-        private static string _baseApiUrl = SharedResource.BaseUrlAppsStoreFeed_Tablet;
-
         //Empty Ctor necessary for XML Deserializer
-        public AppStoreDealsFeedService()
+        public AppStoreFeedService()
         {
 
         }
 
-        public async Task<AppStoreDealsFeedModel> GetAppStoreDealsFeedDataAsync()
+        public async Task<AppStoreDealsFeedModel> GetDealsHubCollectionFeedDataAsync()
         {
-            return await GetAppStoreDealsFeedDataAsync(_baseApiUrl);
+            var resources = new ResourceLoader();
+            var baseFeedUrl = resources.GetString("DealsHubStoreFeedUrl_Phone");
+
+            return await GetAppStoreFeedDataAsync(baseFeedUrl);
         }
 
-        public async Task<AppStoreDealsFeedModel> GetAppStoreDealsFeedDataAsync(string url)
+        public Task<AppStoreDealsFeedModel> GetRedStripeDealsCollectionFeedDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AppStoreDealsFeedModel> GetMusicLoversCollectionFeedDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public async Task<AppStoreDealsFeedModel> GetAppStoreFeedDataAsync(string url)
         {
             AppStoreDealsFeedModel feedData = null;
 

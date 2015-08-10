@@ -114,8 +114,8 @@
     <PRIResource Include="strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayer.cs" />
-    <Compile Include="DataLayerExceptions.cs" />
+    <None Include="DataLayer.cs" />
+    <None Include="DataLayerExceptions.cs" />
     <Compile Include="FeedModels\AppAsset.cs" />
     <Compile Include="FeedModels\AppCategory.cs" />
     <Compile Include="FeedModels\AppStoreDealsFeedModel.cs" />
@@ -124,14 +124,14 @@
     <Compile Include="FeedModels\EdsResponse.cs" />
     <Compile Include="FeedModels\IAppStoreDealsFeedModel.cs" />
     <Compile Include="FeedModels\IAppStoreItem.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Deal.cs" />
+    <None Include="Models\Album.cs" />
+    <None Include="Models\Category.cs" />
+    <None Include="Models\Deal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AppStoreDealsFeedService.cs" />
-    <Compile Include="Services\IAppStoreDealsFeedService.cs" />
-    <Compile Include="Services\IMusicDealFeedService.cs" />
-    <Compile Include="Services\MusicDealFeedService.cs" />
+    <Compile Include="Services\AppStoreFeedService.cs" />
+    <Compile Include="Services\IAppStoreFeedService.cs" />
+    <None Include="Services\IMusicDealFeedService.cs" />
+    <None Include="Services\MusicDealFeedService.cs" />
     <Compile Include="Utils\Serialization.cs" />
     <Content Include="Properties\DealsHub_DataLayer.rd.xml" />
   </ItemGroup>

@@ -10,10 +10,10 @@ namespace MSDealsDataLayer.ViewModels
 {
     public class AppsPageViewModel
     {
-        private IAppStoreDealsFeedService _dataService = null;
+        private IAppStoreFeedService _dataService = null;
         private bool _usePhoneFeed = false;
 
-        public AppsPageViewModel(IAppStoreDealsFeedService dataService, bool usePhoneFeed)
+        public AppsPageViewModel(IAppStoreFeedService dataService, bool usePhoneFeed)
         {
             _usePhoneFeed = usePhoneFeed;
             if (dataService == null)
@@ -24,7 +24,7 @@ namespace MSDealsDataLayer.ViewModels
                 }
                 else
                 {
-                _dataService = new AppStoreDealsFeedService();
+                _dataService = new AppStoreFeedService();
                 //_dataService = new SampleStoreDealsFeedService();
                 }
             }
@@ -45,7 +45,7 @@ namespace MSDealsDataLayer.ViewModels
         {
             if (_dataService != null)
             {
-                var appDealsData = await _dataService.GetAppStoreDealsFeedDataAsync();
+                var appDealsData = await _dataService.GetDealsHubCollectionFeedDataAsync();
 
                 //Populate view model properties
                 if (appDealsData != null)
