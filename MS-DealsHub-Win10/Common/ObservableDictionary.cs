@@ -150,4 +150,3 @@ namespace MS_DealsHub_Win10.Common
     }
 }
 
-}

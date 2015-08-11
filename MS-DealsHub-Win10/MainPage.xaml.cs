@@ -11,15 +11,20 @@ namespace MSDealsWin10App
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static MainPage Current;
+        public static Frame RootFrame = null;
+
         public MainPage()
         {
             this.InitializeComponent();
+            Current = this;
+            RootFrame = rootFrame;
         }
 
         private ObservableCollection<NavLink> _navLinks = new ObservableCollection<NavLink>()
             {
                 new NavLink() { Label = "Featured", Symbol = Windows.UI.Xaml.Controls.Symbol.Favorite  },
-                new NavLink() { Label = "Apps", Symbol = Windows.UI.Xaml.Controls.Symbol.AllApps },
+                new NavLink() { Label = "Apps & Games", Symbol = Windows.UI.Xaml.Controls.Symbol.AllApps },
                 new NavLink() { Label = "Games", Symbol = Windows.UI.Xaml.Controls.Symbol.People },
                 new NavLink() { Label = "Music", Symbol = Windows.UI.Xaml.Controls.Symbol.MusicInfo },
                 new NavLink() { Label = "TV & Movies", Symbol = Windows.UI.Xaml.Controls.Symbol.Video }
@@ -32,7 +37,13 @@ namespace MSDealsWin10App
 
         private void NavLinksList_ItemClick(object sender, ItemClickEventArgs e)
         {
-            content.Text = (e.ClickedItem as NavLink).Label + " Page";
+            var navLabel = (e.ClickedItem as NavLink).Label;
+            //content.Text =  navLabel + " Page";
+
+            if (navLabel.Contains("Apps"))
+            {
+                this.rootFrame.Navigate(typeof(AppsGamesPage));
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

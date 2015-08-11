@@ -4,10 +4,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MSDealsWin10App"
+    xmlns:controls="using:MSDealsWin10App.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Loaded="MainPage_OnLoaded">
+    Loaded="AppsPage_Loaded">
 
     <Page.Resources>
         <!-- Collection of items displayed by this page -->
@@ -15,7 +16,6 @@
             x:Name="itemsViewSource"
             Source="{Binding Items, Mode=OneWay}"
             />
-        <ImageBrush x:Name="MainBackGroundImageBrush" ImageSource="Assets/bkg_1920x1080.png"/>
 
         <SolidColorBrush x:Key="ListViewItemPointerOverBackgroundThemeBrush" Color="#FFF1F1F1"/>
         <Style x:Key="GridViewItemStyle1" TargetType="GridViewItem">
@@ -50,7 +50,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
         DataContext="{Binding Home}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>

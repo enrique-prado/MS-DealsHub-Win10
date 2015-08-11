@@ -10,6 +10,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using MSDealsDataLayer.FeedModels;
 using Windows.ApplicationModel.Resources;
+using System.Reflection;
 
 namespace MSDealsDataLayer.Services
 {
@@ -23,8 +24,8 @@ namespace MSDealsDataLayer.Services
 
         public async Task<AppStoreDealsFeedModel> GetDealsHubCollectionFeedDataAsync()
         {
-            var resources = new ResourceLoader();
-            var baseFeedUrl = resources.GetString("DealsHubStoreFeedUrl_Phone");
+            var resources = ResourceLoader.GetForCurrentView("DealsHub-DataLayer/Resources");
+            var baseFeedUrl = resources.GetString("DealsHubStoreFeedUrl_Tablet");
 
             return await GetAppStoreFeedDataAsync(baseFeedUrl);
         }

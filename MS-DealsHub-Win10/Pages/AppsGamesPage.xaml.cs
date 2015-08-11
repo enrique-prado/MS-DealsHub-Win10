@@ -1,5 +1,14 @@
 ﻿
 
+using MS_DealsHub_Win10.Common;
+using MSDealsDataLayer.ViewModels;
+using System;
+using Windows.Networking.Connectivity;
+using Windows.System;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+
 namespace MSDealsWin10App
 {
     /// <summary>
@@ -24,7 +33,7 @@ namespace MSDealsWin10App
             get { return this.defaultViewModel; }
         }
 
-        private async void MainPage_OnLoaded(object sender, RoutedEventArgs e)
+        private async void AppsPage_Loaded(object sender, RoutedEventArgs e)
         {
             if (!IsInternetConnected())
             {
@@ -37,7 +46,7 @@ namespace MSDealsWin10App
             }
             else
             {
-                var mainViewModel = new MainPageViewModel(null, false);
+                var mainViewModel = new AppsPageViewModel(null, false);
                 var vmData = await mainViewModel.GetHomePageViewModel();
                 this.DefaultViewModel["Home"] = vmData;
                 this.DefaultViewModel["Items"] = vmData.AppViewModels;
@@ -45,7 +54,7 @@ namespace MSDealsWin10App
                 spinner.IsActive = false;
 
                 //Create Live Tile Background task
-                CreateLiveTileBackgroundTask();
+                //CreateLiveTileBackgroundTask();
             }
         }
 
@@ -56,31 +65,31 @@ namespace MSDealsWin10App
             return isConnected;
         }
 
-        private static async void CreateLiveTileBackgroundTask()
-        {
-            var result = await BackgroundExecutionManager.RequestAccessAsync();
-            if (result == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                result == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
-            {
-                foreach (var task in BackgroundTaskRegistration.AllTasks)
-                {
-                    if (task.Value.Name == taskName)
-                    {
-                        task.Value.Unregister(true);
-                    }
-                }
+        //private static async void CreateLiveTileBackgroundTask()
+        //{
+        //    var result = await BackgroundExecutionManager.RequestAccessAsync();
+        //    if (result == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
+        //        result == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
+        //    {
+        //        foreach (var task in BackgroundTaskRegistration.AllTasks)
+        //        {
+        //            if (task.Value.Name == taskName)
+        //            {
+        //                task.Value.Unregister(true);
+        //            }
+        //        }
 
-                BackgroundTaskBuilder taskBuilder = new BackgroundTaskBuilder
-                {
-                    Name = taskName,
-                    TaskEntryPoint = taskEntryPoint
-                };
+        //        BackgroundTaskBuilder taskBuilder = new BackgroundTaskBuilder
+        //        {
+        //            Name = taskName,
+        //            TaskEntryPoint = taskEntryPoint
+        //        };
 
-                taskBuilder.SetTrigger(new TimeTrigger(720, false)); // 720 min = 12 hours
-                var registration = taskBuilder.Register();
-                Debug.WriteLine("Background Task Registered");
-            }
-        }
+        //        taskBuilder.SetTrigger(new TimeTrigger(720, false)); // 720 min = 12 hours
+        //        var registration = taskBuilder.Register();
+        //        Debug.WriteLine("Background Task Registered");
+        //    }
+        //}
 
         private async void ItemGridView_OnItemClick(object sender, ItemClickEventArgs e)
         {

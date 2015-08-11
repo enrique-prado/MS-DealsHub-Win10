@@ -97,11 +97,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Controls\StarControl.xaml.cs">
+      <DependentUpon>StarControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AppsGamesPage.xaml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
     <None Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\AppElementViewModel.cs" />
     <Compile Include="ViewModels\AppsPageViewModel.cs" />
@@ -129,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\StarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

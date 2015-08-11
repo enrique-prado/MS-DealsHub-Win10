@@ -117,20 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DealsHubStoreFeedUrl_Phone" xml:space="preserve">
-    <value>http://marketplaceedgeservice.windowsphone.com/v9/catalog/appCollections/52f840d8-f651-4c01-a599-387687c7aef0/apps?os=8.10.12393.0&amp;cc=US&amp;lang=en-US</value>
-    <comment>Deals Hub phone app collection feed</comment>
+  <data name="FreePrice" xml:space="preserve">
+    <value>Free</value>
   </data>
-  <data name="DealsHubStoreFeedUrl_Tablet" xml:space="preserve">
-    <value>https://next-services.apps.microsoft.com/browse/6.3.9600-0/788/en-US_en-US.en-CA.en.ja/c/US/cp/10005001/Topic/11871314/pc/0/pt/x64/hw/1</value>
-    <comment>Deals Hub tablet app collection feed</comment>
-  </data>
-  <data name="MusicLoversStoreFeedUrl_Tablet" xml:space="preserve">
-    <value>https://next-services.apps.microsoft.com/browse/6.3.9600-0/788/en-US_en-US.en-CA.en.ja/c/US/cp/10005001/Topic/11233339/pc/0/pt/x64/hw/1</value>
-    <comment>Music lovers tablet app collection feed</comment>
-  </data>
-  <data name="MusicLoverStoreFeedUrl_Phone" xml:space="preserve">
-    <value>todo</value>
-    <comment>Music lovers phone app collection feed</comment>
+  <data name="NoCategory" xml:space="preserve">
+    <value>Uncategorized</value>
   </data>
 </root>
