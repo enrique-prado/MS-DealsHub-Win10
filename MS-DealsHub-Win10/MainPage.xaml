@@ -16,7 +16,7 @@
         </DataTemplate>
     </Page.Resources>
 
-    <SplitView x:Name="splitView" Width="800" Height="400"  Background="White" OpenPaneLength="256" CompactPaneLength="48" DisplayMode="Inline" IsPaneOpen="True">
+    <SplitView x:Name="splitView" Width="auto" Height="auto"  Background="Black" OpenPaneLength="256" CompactPaneLength="48" DisplayMode="Inline" IsPaneOpen="True">
         <SplitView.Pane>
             <Grid>
                 <Grid.RowDefinitions>
