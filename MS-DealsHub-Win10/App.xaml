@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="MS_DealsHub_Win10.App"
+    x:Class="MSDealsWin10App.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:MS_DealsHub_Win10"
+    xmlns:local="using:MSDealsWin10App"
     RequestedTheme="Light">
 
 </Application>
